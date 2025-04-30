@@ -9,7 +9,6 @@ import matplotlib.pyplot as plt
 
 def measure_script(file_path):
     ext = os.path.splitext(file_path)[1]
-
     if ext == '.py':
         cmd = ['python3', file_path]
     elif ext == '.js':
@@ -128,12 +127,6 @@ def main():
         help='Diretório raiz a ser analisado'
     )
     parser.add_argument(
-        '--ext', '-e',
-        nargs='*',
-        default=['.py'],
-        help='Extensões a considerar (ex: .py .js .java)'
-    )
-    parser.add_argument(
     '--csv',
     help='Caminho para salvar os resultados em CSV (ex: resultados.csv)'
     )
@@ -147,9 +140,9 @@ def main():
     results = []
     for root, _, files in os.walk(args.path):
         for fname in files:
-            if os.path.splitext(fname)[1] in args.ext:
+            if os.path.splitext(fname)[1] in [".py", ".js", ".sh"]:
                 fp = os.path.join(root, fname)
-                results.append(analyze_file(fp, args.ext))
+                results.append(analyze_file(fp, [".py", ".js", ".sh"]))
 
     header = f"{'Arquivo':<40}{'LOC':>6}{'EF_LOC':>8}{'Funções':>9}{'Cx Total':>10}{'Cx Máx':>8}{'Tam(B)':>10}{'Tempo(s)':>10}{'Mem(B)':>12}"
     print(header)

@@ -1,4 +1,8 @@
 Arquivo,LOC,EF_LOC,Funções,Cx Total,Cx Máx,Tam(B),Tempo(s),Mem(B)
-./exemplos/curto.py,6,4,1,1,1,109,0.05,606208
-./exemplos/longo.py,11,8,1,4,4,280,2.07,19464192
-./exemplos/medio.py,12,9,1,2,2,232,1.11,8916992
+./exemplos/selection_sort.js,13,12,2,5,4,376,0.10,54300672
+./exemplos/merge_sort.js,18,16,3,7,4,551,0.05,8192
+./exemplos/curto.py,6,4,1,1,1,109,0.05,8192
+./exemplos/longo.py,11,8,1,4,4,280,2.06,19398656
+./exemplos/bubble_sort.py,12,11,1,4,4,344,2.31,10330112
+./exemplos/medio.py,12,9,1,2,2,232,1.06,9408512
+./exemplos/quick_sort.py,13,12,1,8,8,408,0.05,552960
