@@ -1,8 +1,8 @@
-Arquivo,LOC,EF_LOC,Funções,Cx Total,Cx Máx,Tam(B),Tempo(s),Mem(B)
-./exemplos/selection_sort.js,13,12,2,5,4,376,0.10,54300672
-./exemplos/merge_sort.js,18,16,3,7,4,551,0.05,8192
-./exemplos/curto.py,6,4,1,1,1,109,0.05,8192
-./exemplos/longo.py,11,8,1,4,4,280,2.06,19398656
-./exemplos/bubble_sort.py,12,11,1,4,4,344,2.31,10330112
-./exemplos/medio.py,12,9,1,2,2,232,1.06,9408512
-./exemplos/quick_sort.py,13,12,1,8,8,408,0.05,552960
+Arquivo,LOC,EF_LOC,Funções,Cx Total,Cx Máx,Tam(B),Tempo(s),Mem(B),Watt,Joules
+exemplos/selection_sort.js,13,12,2,5,4,376,0.15,45445120,79.44,12.02
+exemplos/merge_sort.js,18,16,3,7,4,551,0.10,643072,59.58,6.01
+exemplos/curto.py,6,4,1,1,1,109,0.05,483328,0.00,0.00
+exemplos/longo.py,11,8,1,4,4,280,2.07,19505152,2.32,4.81
+exemplos/bubble_sort.py,12,11,1,4,4,344,4.54,10420224,129.13,585.61
+exemplos/medio.py,12,9,1,2,2,232,1.11,8802304,7.57,8.42
+exemplos/quick_sort.py,13,12,1,8,8,408,0.05,483328,0.00,0.00
