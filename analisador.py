@@ -23,30 +23,28 @@ def measure_script(file_path):
     start = time.time()
     peak_memory = 0
 
-    # desalinha a primeira chamada para cpu_percent
     proc.cpu_percent(interval=None)
     cpu_samples = []
 
-    # loop de monitoramento: coleta memória e cpu_percent
     while proc.poll() is None:
         try:
             mem = proc.memory_info().rss
             peak_memory = max(peak_memory, mem)
-            cpu = proc.cpu_percent(interval=None)  # % CPU desde última chamada
+            cpu = proc.cpu_percent(interval=None)
             cpu_samples.append(cpu)
         except (psutil.NoSuchProcess, psutil.ZombieProcess):
             break
-        time.sleep(0.05)
+        time.sleep(0.05) #Pra pegar as métricas melhor
 
     proc.wait()
     elapsed = time.time() - start
 
-    # calcula média de uso de CPU do processo
+    # média de uso de CPU
     avg_cpu = sum(cpu_samples) / len(cpu_samples) if cpu_samples else 0.0
 
     # estimativa de potência e energia
     num_cores = psutil.cpu_count(logical=True)
-    nominal_power_per_core = 10  # Watts por núcleo (ajustável)
+    nominal_power_per_core = 10
     power = (avg_cpu / 100) * num_cores * nominal_power_per_core
     energy_joules = power * elapsed
 
